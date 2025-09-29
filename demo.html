@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Registro Horario Laboral</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .demo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .demo-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+        }
+        .demo-header h1 {
+            color: #2563eb;
+            margin: 0;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .feature-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #2563eb;
+        }
+        .feature-card h3 {
+            margin-top: 0;
+            color: #1e293b;
+        }
+        .workers-demo {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .workers-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .worker-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .worker-name {
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+        .worker-details {
+            font-size: 0.9em;
+            color: #64748b;
+        }
+        .instructions {
+            background: #e0f2fe;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #0288d1;
+            margin: 20px 0;
+        }
+        .launch-button {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            text-decoration: none;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .launch-button:hover {
+            transform: translateY(-2px);
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .tech-tag {
+            background: #2563eb;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <img src="logo-redes_Transparente-216x216.png" alt="Logo" style="width: 80px; height: 80px; margin-bottom: 15px;">
+            <h1>Registro Horario Laboral</h1>
+            <p style="color: #64748b; margin: 10px 0;">Aplicación Web Completa con Funcionalidad Offline</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🔒 Seguridad Avanzada</h3>
+                <ul>
+                    <li>Contraseñas únicas por trabajador</li>
+                    <li>Validación de DNI automática</li>
+                    <li>Restricción de acceso por horario (solo después de 18:00)</li>
+                    <li>Almacenamiento local seguro</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>📱 Multi-Plataforma</h3>
+                <ul>
+                    <li>Responsive Design (móvil, tablet, escritorio)</li>
+                    <li>PWA - Instalable como app nativa</li>
+                    <li>Funcionamiento 100% offline</li>
+                    <li>Service Worker para caching</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>✍️ Firma Digital</h3>
+                <ul>
+                    <li>Canvas HTML5 para firma táctil</li>
+                    <li>Compatible con touch y mouse</li>
+                    <li>Validación obligatoria de firma</li>
+                    <li>Limpieza y redibujo de firma</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>📄 Generación de PDFs</h3>
+                <ul>
+                    <li>PDF automático con todos los datos</li>
+                    <li>Declaración legal incluida</li>
+                    <li>Descarga inmediata</li>
+                    <li>Formato profesional</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="workers-demo">
+            <h3>👥 Trabajadores Registrados (13 en total)</h3>
+            <div class="workers-list">
+                <div class="worker-card">
+                    <div class="worker-name">BORJA CARRERAS MARTIN</div>
+                    <div class="worker-details">DNI: 53615032P | Contraseña: BCM-K8L3X</div>
+                </div>
+                <div class="worker-card">
+                    <div class="worker-name">DAVID MORENO GOMEZ</div>
+                    <div class="worker-details">DNI: 46846909A | Contraseña: DMG-P4N7Q</div>
+                </div>
+                <div class="worker-card">
+                    <div class="worker-name">EDGAR ALONSO SANCHEZ SUAREZ</div>
+                    <div class="worker-details">DNI: X8723873L | Contraseña: EAS-M9R2T</div>
+                </div>
+                <div class="worker-card">
+                    <div class="worker-name">JAVIER CARRERAS MARTIN</div>
+                    <div class="worker-details">DNI: 53996573W | Contraseña: JCM-V6Z8B</div>
+                </div>
+                <div class="worker-card">
+                    <div class="worker-name">+ 9 trabajadores más...</div>
+                    <div class="worker-details">Ver archivo CONTRASEÑAS_TRABAJADORES.md</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 Instrucciones de Uso</h3>
+            <ol>
+                <li><strong>Configuración:</strong> Subir todos los archivos a un servidor web</li>
+                <li><strong>Acceso:</strong> Solo funciona después de las 18:00 horas</li>
+                <li><strong>Proceso:</strong> Seleccionar trabajador → Introducir contraseña → Firmar → Generar PDF</li>
+                <li><strong>Distribución:</strong> Enviar contraseñas individuales a cada trabajador</li>
+            </ol>
+        </div>
+
+        <div class="tech-stack">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript ES6+</span>
+            <span class="tech-tag">Canvas API</span>
+            <span class="tech-tag">Service Worker</span>
+            <span class="tech-tag">PWA</span>
+            <span class="tech-tag">jsPDF</span>
+            <span class="tech-tag">LocalStorage</span>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="demo-index.html" class="launch-button" style="background: linear-gradient(135deg, #059669, #047857); margin-bottom: 15px;">
+                🎮 DEMO FUNCIONAL (Sin restricción horaria)
+            </a>
+            <a href="index.html" class="launch-button">
+                🚀 Aplicación Producción (Solo después 18:00)
+            </a>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #64748b;">
+            <p><strong>Horarios Laborales:</strong></p>
+            <p>PLANTA EXTERNA: 08:00 - 14:00 / 15:00 - 17:00</p>
+            <p>OFICINA: 08:00 - 16:00</p>
+        </div>
+    </div>
+</body>
+</html>

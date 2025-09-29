@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Horario Laboral</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="logo-redes_Transparente-216x216.png" alt="Logo" class="logo">
+            <h1>Registro Horario Laboral</h1>
+            <div class="schedule-info">
+                <div class="schedule-item">
+                    <i class="fas fa-building"></i>
+                    <span><strong>PLANTA EXTERNA:</strong> 08:00 - 14:00 / 15:00 - 17:00</span>
+                </div>
+                <div class="schedule-item">
+                    <i class="fas fa-desktop"></i>
+                    <span><strong>OFICINA:</strong> 08:00 - 16:00</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="time-restriction" id="timeRestriction">
+            <div class="restriction-content">
+                <i class="fas fa-clock"></i>
+                <h2>Acceso Restringido</h2>
+                <p>La aplicación solo está disponible después de las 18:00 horas.</p>
+                <div class="current-time" id="currentTime"></div>
+            </div>
+        </div>
+
+        <main class="main-content" id="mainContent" style="display: none;">
+            <form class="form" id="registroForm">
+                <div class="form-group">
+                    <label for="trabajador">
+                        <i class="fas fa-user"></i>
+                        Nombre y Apellidos del Trabajador
+                    </label>
+                    <select id="trabajador" name="trabajador" required>
+                        <option value="">- Selecciona tu nombre -</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dni">
+                        <i class="fas fa-id-card"></i>
+                        DNI Trabajador
+                    </label>
+                    <input type="text" id="dni" name="dni" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="horario">
+                        <i class="fas fa-clock"></i>
+                        Horario Laboral
+                    </label>
+                    <select id="horario" name="horario" required readonly>
+                        <option value="">- Se asignará automáticamente -</option>
+                        <option value="PLANTA EXTERNA: 08:00 - 14:00 / 15:00 - 17:00">PLANTA EXTERNA: 08:00 - 14:00 / 15:00 - 17:00</option>
+                        <option value="OFICINA: 08:00 - 16:00">OFICINA: 08:00 - 16:00</option>
+                    </select>
+                    <small style="color: #64748b; font-size: 0.85rem; margin-top: 5px; display: block;">
+                        <i class="fas fa-info-circle"></i>
+                        Solo Juan Simón de la Fuente y Jhon Alexander Arroyave tienen horario de oficina
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i>
+                        Contraseña
+                    </label>
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña única" required>
+                    <button type="button" class="show-password" id="showPassword">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+
+                <div class="signature-section">
+                    <label>Firma Digital</label>
+                    <canvas id="signatureCanvas" width="400" height="200"></canvas>
+                    <div class="signature-controls">
+                        <button type="button" id="clearSignature" class="btn-secondary">
+                            <i class="fas fa-eraser"></i>
+                            Limpiar Firma
+                        </button>
+                    </div>
+                </div>
+
+                <div class="declaration">
+                    <p>"Declaro que, en virtud de la Ley 8/1980, de 10 de marzo, del Estatuto de los Trabajadores, así como de la normativa vigente sobre registro de jornada laboral, procedo a firmar y confirmar que las horas trabajadas han sido registradas correctamente en el presente formulario. Firmo para constancia de que las horas consignadas en este registro corresponden a las realizadas durante mi jornada laboral. Acepto que la información proporcionada sea almacenada conforme a la legislación laboral vigente."</p>
+                </div>
+
+                <button type="submit" class="btn-primary" id="submitBtn">
+                    <i class="fas fa-signature"></i>
+                    Firmar y Registrar
+                </button>
+            </form>
+        </main>
+
+        <div class="status-message" id="statusMessage"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
