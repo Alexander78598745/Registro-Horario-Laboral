@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Horario Laboral</title>
+    <title>DEMO - Registro Horario Laboral</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -15,7 +15,7 @@
     <div class="container">
         <header class="header">
             <img src="logo-redes_Transparente-216x216.png" alt="Logo" class="logo">
-            <h1>Registro Horario Laboral</h1>
+            <h1>DEMO - Registro Horario Laboral</h1>
             <div class="schedule-info">
                 <div class="schedule-item">
                     <i class="fas fa-building"></i>
@@ -28,7 +28,7 @@
             </div>
         </header>
 
-        <!-- Restricción de tiempo -->
+        <!-- Restricción de tiempo (oculta en demo) -->
         <div class="time-restriction" id="timeRestriction">
             <div class="restriction-content">
                 <i class="fas fa-clock"></i>
@@ -68,6 +68,9 @@
             <div class="auth-content">
                 <h2><i class="fas fa-shield-alt"></i> Autenticación Requerida</h2>
                 <p>Ingresa tus credenciales para acceder al panel de gestión</p>
+                <!-- Mensajes de estado para autenticación -->
+                <div class="status-message" id="authStatusMessage"></div>
+                
                 <form class="form" id="authForm">
                     <div class="form-group">
                         <label for="authTrabajador">
@@ -84,6 +87,13 @@
                             Contraseña
                         </label>
                         <input type="password" id="authPassword" name="authPassword" placeholder="Ingresa tu contraseña" required>
+                        <div class="password-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="rememberPassword">
+                                <span class="checkmark"></span>
+                                Recordar contraseña
+                            </label>
+                        </div>
                     </div>
                     <div class="auth-buttons">
                         <button type="submit" class="btn-primary">
@@ -264,6 +274,6 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="app.js"></script>
+    <script src="demo-app.js"></script>
 </body>
 </html>
